@@ -8,10 +8,16 @@ if (process.argv.length != 5) {
     
     const buffer = readFileSync(process.argv[2]);
     wc(buffer).then(async witnessCalculator => {
-	//    const w= await witnessCalculator.calculateWitness(input,0);
-	//    for (let i=0; i< w.length; i++){
-	//	console.log(w[i]);
-	//    }
+	    const w= await witnessCalculator.calculateWitness(input,0);
+	    console.log("{");
+	    for (let i=0; i< w.length; i++){
+	        if (i != w.length - 1){
+	            console.log("\"" + i + "\": \""+w[i]+ "\",");
+	        } else{
+	            console.log("\"" + i + "\": \""+w[i]+ "\"");
+	        }
+	    }
+	    console.log("}");
 	const buff= await witnessCalculator.calculateWTNSBin(input,0);
 	writeFile(process.argv[4], buff, function(err) {
 	    if (err) throw err;
