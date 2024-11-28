@@ -48,8 +48,8 @@ fn start() -> Result<(), ()> {
     let compilation_config = CompilerConfig {
         vcp: circuit,
         debug_output: user_input.print_ir_flag(),
-        c_flag: true,
-        wasm_flag: true,
+        c_flag: user_input.c_flag(),
+        wasm_flag: user_input.wasm_flag(),
         wat_flag: user_input.wat_flag(),
 	    js_folder: user_input.js_folder().to_string(),
 	    wasm_name: user_input.wasm_name().to_string(),

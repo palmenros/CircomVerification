@@ -30,7 +30,7 @@ fn map_tree(
     tree_constraints.number_inputs = tree.inputs_length;
     tree_constraints.number_outputs = tree.outputs_length;
     tree_constraints.number_signals = tree.signals.len();
-    tree_constraints.are_double_arrow = tree.are_double_arrow.iter().map(|(c, s)| (c + tree_constraints.initial_constraint, *s)).collect();
+    //tree_constraints.are_double_arrow = tree.are_double_arrow.iter().map(|(c, s)| (c + tree_constraints.initial_constraint, *s)).collect();
     tree_constraints.node_id = tree.node_id;
     tree_constraints.template_name = tree.template_name.clone();
     tree_constraints.component_name = tree.path.clone();
